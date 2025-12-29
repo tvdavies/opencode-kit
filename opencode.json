@@ -1,0 +1,34 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "code-review": {
+      "description": "Reviews GitHub PRs for code quality, bugs, and security issues",
+      "mode": "subagent",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "temperature": 0.1,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": true,
+        "github_pr": true,
+        "github_pr_comments": true,
+        "github_pr_review": true
+      },
+      "permission": {
+        "bash": {
+          "gh *": "allow",
+          "*": "deny"
+        },
+        "skill": {
+          "pr-review": "allow",
+          "security-review": "allow"
+        }
+      }
+    }
+  },
+  "permission": {
+    "skill": {
+      "*": "allow"
+    }
+  }
+}
