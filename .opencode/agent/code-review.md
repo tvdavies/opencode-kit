@@ -1,7 +1,7 @@
 ---
 description: Reviews GitHub PRs for code quality, bugs, and security issues
 mode: subagent
-model: anthropic/claude-sonnet-4-20250514
+model: anthropic/claude-opus-4-1-20250805
 temperature: 0.1
 tools:
   write: false
